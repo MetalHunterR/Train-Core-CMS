@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using OrchardCore.ContentFields.Fields;
+using System.ComponentModel.DataAnnotations;
 
 namespace TrainCore.Module.ViewModels
 {
@@ -16,7 +17,7 @@ namespace TrainCore.Module.ViewModels
         public abstract string ModelEra { get; set; }
 
         [Required]
-        public abstract string Description { get; set; }
+        public abstract TextField Description { get; set; }
 
         public abstract string LightDetails { get; set; }
     }

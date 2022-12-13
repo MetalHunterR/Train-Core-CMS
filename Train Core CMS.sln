@@ -5,23 +5,20 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9F8E35F6-1013-4E27-8435-E5179C6A387F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Train Core CMS.Web", "src\Train Core CMS.Web\Train Core CMS.Web.csproj", "{91044410-E51A-4B08-ACD6-1FCC79160493}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Train Core CMS.Web", "src\Train Core CMS.Web\Train Core CMS.Web.csproj", "{91044410-E51A-4B08-ACD6-1FCC79160493}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{DBB8952A-CC4F-4477-B2B5-8317439F66AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainCore.Module", "src\Modules\TrainCore.Module\TrainCore.Module.csproj", "{39095E33-8C6B-4F08-9773-5C65B41FA7CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrainCore.Module", "src\Modules\TrainCore.Module\TrainCore.Module.csproj", "{39095E33-8C6B-4F08-9773-5C65B41FA7CB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Themes", "Themes", "{83021911-86C9-4451-917C-37A216DF83BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainCore.Theme", "src\Themes\TrainCore.Theme\TrainCore.Theme.csproj", "{BDE680BA-B6D7-4B58-89C9-1EC5024A7D16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrainCore.Theme", "src\Themes\TrainCore.Theme\TrainCore.Theme.csproj", "{BDE680BA-B6D7-4B58-89C9-1EC5024A7D16}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{91044410-E51A-4B08-ACD6-1FCC79160493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -37,11 +34,17 @@ Global
 		{BDE680BA-B6D7-4B58-89C9-1EC5024A7D16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDE680BA-B6D7-4B58-89C9-1EC5024A7D16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{91044410-E51A-4B08-ACD6-1FCC79160493} = {9F8E35F6-1013-4E27-8435-E5179C6A387F}
 		{DBB8952A-CC4F-4477-B2B5-8317439F66AF} = {9F8E35F6-1013-4E27-8435-E5179C6A387F}
 		{39095E33-8C6B-4F08-9773-5C65B41FA7CB} = {DBB8952A-CC4F-4477-B2B5-8317439F66AF}
 		{83021911-86C9-4451-917C-37A216DF83BA} = {9F8E35F6-1013-4E27-8435-E5179C6A387F}
 		{BDE680BA-B6D7-4B58-89C9-1EC5024A7D16} = {83021911-86C9-4451-917C-37A216DF83BA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {45EF5C12-436B-4186-8AFF-CC89FD5AC088}
 	EndGlobalSection
 EndGlobal

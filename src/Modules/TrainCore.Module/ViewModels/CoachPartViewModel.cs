@@ -1,3 +1,4 @@
+using OrchardCore.ContentFields.Fields;
 using System.ComponentModel.DataAnnotations;
 
 namespace TrainCore.Module.ViewModels
@@ -12,7 +13,7 @@ namespace TrainCore.Module.ViewModels
 		
         public override string ModelEra { get; set; }
 
-        public override string Description { get; set; }
+        public override TextField Description { get; set; }
 
         public override string LightDetails { get; set; }
 

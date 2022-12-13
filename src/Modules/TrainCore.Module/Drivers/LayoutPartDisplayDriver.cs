@@ -30,8 +30,9 @@ namespace TrainCore.Module.Drivers
             part.Width = vM.Width;
             part.Height = vM.Height;
             part.Length = vM.Length;
+            part.LayoutTitle= vM.LayoutTitle;
             part.LayoutTheme = vM.LayoutTheme;
-            part.Descreption = vM.Descreption;
+            part.Description = vM.Description;
 
             return await EditAsync(part, context);
         }
@@ -41,8 +42,9 @@ namespace TrainCore.Module.Drivers
             viewModel.Width = part.Width;
             viewModel.Height = part.Height;
             viewModel.Length = part.Length;
+            viewModel.LayoutTitle = part.LayoutTitle;
             viewModel.LayoutTheme = part.LayoutTheme;
-            viewModel.Descreption = part.Descreption;
+            viewModel.Description = part.Description;
         }
     }
 }

@@ -1,4 +1,4 @@
-using OrchardCore.ContentManagement;
+using OrchardCore.ContentFields.Fields;
 
 namespace TrainCore.Module.Models
 {
@@ -12,7 +12,7 @@ namespace TrainCore.Module.Models
 
         public override string ModelEra { get; set; }
 
-        public override string Description { get; set; }
+        public override TextField Description { get; set; }
 
         public override string LightDetails { get; set; }
 		

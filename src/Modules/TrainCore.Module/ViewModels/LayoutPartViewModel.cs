@@ -1,3 +1,4 @@
+using OrchardCore.ContentFields.Fields;
 using System.ComponentModel.DataAnnotations;
 
 namespace TrainCore.Module.ViewModels
@@ -14,9 +15,12 @@ namespace TrainCore.Module.ViewModels
         public float Length { get; set; }
 
         [Required]
+        public string LayoutTitle { get; set; }
+
+        [Required]
         public string LayoutTheme { get; set; }
 
         [Required]
-        public string Descreption { get; set; }
+        public TextField Description { get; set; }
 	}
 }

@@ -2,6 +2,8 @@ using TrainCore.Module.Models;
 using OrchardCore.ContentManagement.Metadata;
 using OrchardCore.ContentManagement.Metadata.Settings;
 using OrchardCore.Data.Migration;
+using OrchardCore.ContentFields.Fields;
+using OrchardCore.ContentFields.Settings;
 
 namespace TrainCore.Module.Migrations
 {
@@ -19,11 +21,21 @@ namespace TrainCore.Module.Migrations
             contentDefinitionManager.AlterPartDefinition(nameof(CoachPart), part => part
                 .Attachable()
                 .Reusable()
+                .WithField(nameof(CoachPart.Description), field => field
+                    .OfType(nameof(TextField))
+                    .WithDisplayName("Coach Description")
+                    .WithSettings(new TextFieldSettings
+                    {
+                        Hint = "Describe your coach in a couple of sentances here..."
+                    })
+                    .WithEditor("TextArea"))
             );
 
-            contentDefinitionManager.AlterTypeDefinition("CoachWidget", type => type
+            contentDefinitionManager.AlterTypeDefinition("CoachPage", type => type
+                .Creatable()
+                .Listable()
+                .Draftable()
                 .WithPart(nameof(CoachPart))
-                .Stereotype("Widget")
             );
 
             return 3;
