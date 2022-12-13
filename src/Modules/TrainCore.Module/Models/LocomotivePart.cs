@@ -1,7 +1,9 @@
+using OrchardCore.ContentManagement;
+
 namespace TrainCore.Module.Models
 {
     public class LocomotivePart : BaseTrain
-    {
+	{
         public override string VehicleName { get; set; }
 
         public override string ModelScale { get; set; }
@@ -13,11 +15,11 @@ namespace TrainCore.Module.Models
         public override string Description { get; set; }
 
         public override string LightDetails { get; set; }
-
+		
         public string ModelMotorType { get; set; }
 
         public int ContactWheels { get; set; }
 
         public bool CanUsePantograph { get; set; }
-    }
+	}
 }

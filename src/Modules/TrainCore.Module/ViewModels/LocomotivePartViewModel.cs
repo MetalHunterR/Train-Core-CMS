@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 namespace TrainCore.Module.ViewModels
 {
     public class LocomotivePartViewModel : BaseTrainViewModel
-    {
+	{
         public override string VehicleName { get; set; }
 
         public override string ModelScale { get; set; }
@@ -18,10 +18,10 @@ namespace TrainCore.Module.ViewModels
 
         [Required]
         public string ModelMotorType { get; set; }
-
+		
         [Required]
         public int ContactWheels { get; set; }
 
         public bool CanUsePantograph { get; set; }
-    }
+	}
 }

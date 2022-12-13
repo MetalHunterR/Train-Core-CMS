@@ -6,7 +6,7 @@ namespace TrainCore.Module.ViewModels
 	{
         [Required]
         public float Width { get; set; }
-
+		
         [Required]
         public float Height { get; set; }
 
@@ -18,5 +18,5 @@ namespace TrainCore.Module.ViewModels
 
         [Required]
         public string Descreption { get; set; }
-    }
+	}
 }
