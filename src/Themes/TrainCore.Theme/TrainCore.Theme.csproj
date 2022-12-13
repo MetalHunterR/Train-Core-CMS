@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OrchardCore.ContentTypes" Version="1.4.0" />
+    <PackageReference Include="OrchardCore.Flows" Version="1.4.0" />
+    <PackageReference Include="OrchardCore.Forms" Version="1.4.0" />
+    <PackageReference Include="OrchardCore.Menu" Version="1.4.0" />
+    <PackageReference Include="OrchardCore.Navigation" Version="1.4.0" />
+    <PackageReference Include="OrchardCore.Theme.Targets" Version="1.4.0" />
+    <PackageReference Include="OrchardCore.ContentManagement" Version="1.4.0" />
+    <PackageReference Include="OrchardCore.DisplayManagement" Version="1.4.0" />
+    <PackageReference Include="OrchardCore.ResourceManagement" Version="1.4.0" />
+    <PackageReference Include="OrchardCore.Title" Version="1.4.0" />
+    <PackageReference Include="OrchardCore.Users.Core" Version="1.4.0" />
+    <PackageReference Include="OrchardCore.Widgets" Version="1.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Modules\TrainCore.Module\TrainCore.Module.csproj" />
+  </ItemGroup>
+
+</Project>

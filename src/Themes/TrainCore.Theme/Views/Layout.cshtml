@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="@Orchard.CultureName()">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@RenderTitleSegments(Site.SiteName, "before")</title>
+    <resources type="Meta" />
+    <resources type="HeadLink" />
+    <resources type="Stylesheet" />
+    <resources type="HeadScript" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    @await RenderSectionAsync("HeadMeta", required: false)
+</head>
+<body dir="@Orchard.CultureDir()" id="page-top">
+
+    <nav>
+        <h2 class="brand"><a href="../">@Site.SiteName.ToUpper()</a></h2>
+        <shape type=menu alias="alias:main-menu"/>
+    </nav>
+
+    @await RenderSectionAsync("Header", required: false)
+    <main class="container">
+        @await RenderSectionAsync("Messages", required: false)
+        @await RenderBodyAsync()
+    </main>
+    @if (IsSectionDefined("Footer"))
+    {
+        <footer>
+            <div class="container">
+                @await RenderSectionAsync("Footer", required: false)
+            </div>
+        </footer>
+    }
+    <resources type="FootScript" />
+</body>
+</html>
