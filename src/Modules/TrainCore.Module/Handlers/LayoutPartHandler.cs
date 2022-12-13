@@ -8,7 +8,7 @@ namespace TrainCore.Module.Handlers
     {
         public override Task UpdatedAsync(UpdateContentContext context, LayoutPart instance)
         {
-            context.ContentItem.DisplayText = instance.LayoutTitle;
+            context.ContentItem.DisplayText = instance.LayoutTheme;
             return Task.CompletedTask;
         }
     }

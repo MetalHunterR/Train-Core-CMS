@@ -1,11 +1,5 @@
 ﻿@model TrainCore.Module.ViewModels.LayoutPartViewModel
 
-<fieldset class="form-group" asp-validation-class-for="LayoutTitle">
-	<label asp-for="LayoutTitle">@T["Layout Title"] <span asp-validation-for="LayoutTitle"></span></label>
-	<input asp-for="LayoutTitle" class="form-control" />
-	<span class="hint">@T["The title of the layout you created"] </span>
-</fieldset>
-
 <fieldset class="form-group" asp-validation-class-for="LayoutTheme">
 	<label asp-for="LayoutTheme">@T["Layout Theme"] <span asp-validation-for="LayoutTheme"></span></label>
 	<input asp-for="LayoutTheme" class="form-control" />
@@ -24,14 +18,14 @@
 	<span class="hint">@T["The width of the layout in centimeters"] </span>
 </fieldset>
 
-<fieldset class="form-group" asp-validation-class-for="Height">
-	<label asp-for="Height">@T["Height"] <span asp-validation-for="Height"></span></label>
-	<input asp-for="Length" type="number" class="form-control" />
-	<span class="hint">@T["The height of the layout in centimeters"] </span>
-</fieldset>
-
 <fieldset class="form-group" asp-validation-class-for="Length">
 	<label asp-for="Length">@T["Length"] <span asp-validation-for="Length"></span></label>
 	<input asp-for="Length" type="number" class="form-control" />
 	<span class="hint">@T["The length of the layout in centimeters"] </span>
+</fieldset>
+
+<fieldset class="form-group" asp-validation-class-for="Height">
+	<label asp-for="Height">@T["Height"] <span asp-validation-for="Height"></span></label>
+	<input asp-for="Length" type="number" class="form-control" />
+	<span class="hint">@T["The height of the layout in centimeters"] </span>
 </fieldset>

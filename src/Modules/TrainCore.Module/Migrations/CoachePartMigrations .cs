@@ -35,7 +35,9 @@ namespace TrainCore.Module.Migrations
                 .Creatable()
                 .Listable()
                 .Draftable()
-                .WithPart(nameof(CoachPart))
+                .Versionable()
+                .Securable()
+                .WithPart(nameof(HtmlField))
             );
 
             return 3;

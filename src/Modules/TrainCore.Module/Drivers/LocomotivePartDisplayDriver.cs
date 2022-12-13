@@ -27,7 +27,6 @@ namespace TrainCore.Module.Drivers
 
             await updater.TryUpdateModelAsync(vM, Prefix);
 
-            part.VehicleName = vM.VehicleName;
             part.ModelScale = vM.ModelScale;
             part.CompanyName = vM.CompanyName;
             part.ModelEra = vM.ModelEra;
@@ -42,7 +41,6 @@ namespace TrainCore.Module.Drivers
 
         private static void PopulateViewModel(LocomotivePart part, LocomotivePartViewModel viewModel)
         {
-            viewModel.VehicleName= part.VehicleName;
             viewModel.ModelScale= part.ModelScale;
             viewModel.CompanyName= part.CompanyName;
             viewModel.ModelEra= part.ModelEra;

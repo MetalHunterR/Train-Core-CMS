@@ -1,0 +1,7 @@
+{
+  "name": "TrainCore.Theme",
+  "version": "0.0.1",
+  "dependencies": {
+    "bootstrap": "5.0.2"
+  }
+}

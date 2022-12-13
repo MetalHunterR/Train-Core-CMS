@@ -21,21 +21,14 @@ namespace TrainCore.Module.Migrations
             contentDefinitionManager.AlterPartDefinition(nameof(LayoutPart), part => part
                 .Attachable()
                 .Reusable()
-                .WithField(nameof(LayoutPart.Description), field => field
-                    .OfType(nameof(TextField))
-                    .WithDisplayName("Layout Description")
-                    .WithSettings(new TextFieldSettings
-                    {
-                        Hint = "Describe your layout in a couple of sentances here..."
-                    })
-                    .WithEditor("TextArea"))
             );
 
             contentDefinitionManager.AlterTypeDefinition("LayoutPage", type => type
                 .Creatable()
                 .Listable()
                 .Draftable()
-                .WithPart(nameof(LayoutPart))
+                .Versionable()
+                .Securable()
             );
 
             return 3;

@@ -8,7 +8,7 @@ namespace TrainCore.Module.Handlers
     {
         public override Task UpdatedAsync(UpdateContentContext context, CoachPart instance)
         {
-            context.ContentItem.DisplayText = instance.VehicleName;
+            context.ContentItem.DisplayText = instance.CompanyName;
             return Task.CompletedTask;
         }
     }

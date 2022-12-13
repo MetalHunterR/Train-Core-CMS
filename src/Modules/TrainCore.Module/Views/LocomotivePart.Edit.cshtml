@@ -1,0 +1,49 @@
+﻿@model TrainCore.Module.ViewModels.LocomotivePartViewModel
+
+<fieldset class="form-group" asp-validation-class-for="ModelScale">
+	<label asp-for="ModelScale">@T["Model Scale"] <span asp-validation-for="ModelScale"></span></label>
+	<input asp-for="ModelScale" class="form-control" />
+	<span class="hint">@T["The scale of the model"] </span>
+</fieldset>
+
+<fieldset class="form-group" asp-validation-class-for="CompanyName">
+	<label asp-for="CompanyName">@T["Company Name"] <span asp-validation-for="CompanyName"></span></label>
+	<input asp-for="CompanyName" class="form-control" />
+	<span class="hint">@T["Company who created the model"] </span>
+</fieldset>
+
+<fieldset class="form-group" asp-validation-class-for="ModelEra">
+	<label asp-for="ModelEra">@T["Width"] <span asp-validation-for="ModelEra"></span></label>
+	<input asp-for="ModelEra" class="form-control" />
+	<span class="hint">@T["The era of the model"] </span>
+</fieldset>
+
+<fieldset class="form-group" asp-validation-class-for="Description.Text">
+	<label asp-for="Description">@T["Description"] <span asp-validation-for="Description"></span></label>
+	<input asp-for="Description.Text" type="number" class="form-control" />
+	<span class="hint">@T["The description of the model"] </span>
+</fieldset>
+
+<fieldset class="form-group" asp-validation-class-for="LightDetails">
+	<label asp-for="LightDetails">@T["Light Details"] <span asp-validation-for="LightDetails"></span></label>
+	<input asp-for="LightDetails" class="form-control" />
+	<span class="hint">@T["Usable lights on the model"] </span>
+</fieldset>
+
+<fieldset class="form-group" asp-validation-class-for="ModelMotorType">
+	<label asp-for="ModelMotorType">@T["Model Motor Type"] <span asp-validation-for="ModelMotorType"></span></label>
+	<input asp-for="ModelMotorType" class="form-control" />
+	<span class="hint">@T["The type of motor used in the model"] </span>
+</fieldset>
+
+<fieldset class="form-group" asp-validation-class-for="ContactWheels">
+	<label asp-for="ContactWheels">@T["Contact Wheels"] <span asp-validation-for="ContactWheels"></span></label>
+	<input asp-for="ContactWheels" type="number" type="number" class="form-control" />
+	<span class="hint">@T["The number of wheels used to collect energy"] </span>
+</fieldset>
+
+<fieldset class="form-group" asp-validation-class-for="CanUsePantograph">
+	<label asp-for="CanUsePantograph">@T["Light Details"] <span asp-validation-for="CanUsePantograph"></span></label>
+	<input asp-for="CanUsePantograph" type="checkbox" class="form-control" />
+	<span class="hint">@T["Can the model be used with Pantograph"] </span>
+</fieldset>

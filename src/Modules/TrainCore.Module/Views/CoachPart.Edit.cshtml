@@ -1,0 +1,37 @@
+﻿@model TrainCore.Module.ViewModels.CoachPartViewModel
+
+<fieldset class="form-group" asp-validation-class-for="ModelScale">
+	<label asp-for="ModelScale">@T["Model Scale"] <span asp-validation-for="ModelScale"></span></label>
+	<input asp-for="ModelScale" class="form-control" />
+	<span class="hint">@T["The scale of the model"] </span>
+</fieldset>
+
+<fieldset class="form-group" asp-validation-class-for="CompanyName">
+	<label asp-for="CompanyName">@T["Company Name"] <span asp-validation-for="CompanyName"></span></label>
+	<input asp-for="CompanyName" class="form-control" />
+	<span class="hint">@T["Company who created the model"] </span>
+</fieldset>
+
+<fieldset class="form-group" asp-validation-class-for="ModelEra">
+	<label asp-for="ModelEra">@T["Model Era"] <span asp-validation-for="ModelEra"></span></label>
+	<input asp-for="ModelEra" class="form-control" />
+	<span class="hint">@T["The era of the model"] </span>
+</fieldset>
+
+<fieldset class="form-group" asp-validation-class-for="Description.Text">
+	<label asp-for="Description">@T["Description"] <span asp-validation-for="Description.Text"></span></label>
+	<input asp-for="Description.Text" class="form-control" />
+	<span class="hint">@T["The description of the model"] </span>
+</fieldset>
+
+<fieldset class="form-group" asp-validation-class-for="LightDetails">
+	<label asp-for="LightDetails">@T["Light Details"] <span asp-validation-for="LightDetails"></span></label>
+	<input asp-for="LightDetails" class="form-control" />
+	<span class="hint">@T["Usable lights on the model"] </span>
+</fieldset>
+
+<fieldset class="form-group" asp-validation-class-for="HasInteriorBuiltIn">
+	<label asp-for="HasInteriorBuiltIn">@T["Has Interior Built-In"] <span asp-validation-for="HasInteriorBuiltIn"></span></label>
+	<input asp-for="HasInteriorBuiltIn" type="checkbox" class="form-control" />
+	<span class="hint">@T["Does the model comes with interior built-in"] </span>
+</fieldset>

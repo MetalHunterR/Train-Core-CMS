@@ -5,5 +5,6 @@ using OrchardCore.DisplayManagement.Manifest;
     Author = "The Orchard Core Team",
     Website = "https://orchardcore.net",
     Version = "0.0.1",
-    Description = "TrainCore.Theme"
+    Description = "TrainCore.Theme",
+	Tags = new[] { "Bootstrap", "Train", "Stolen Shit" }
 )]

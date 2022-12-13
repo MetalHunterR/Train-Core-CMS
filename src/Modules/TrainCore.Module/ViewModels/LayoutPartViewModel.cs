@@ -6,21 +6,18 @@ namespace TrainCore.Module.ViewModels
 	public class LayoutPartViewModel
 	{
         [Required]
-        public float Width { get; set; }
-		
+        public string LayoutTheme { get; set; }
+
         [Required]
-        public float Height { get; set; }
+        public TextField Description { get; set; }
 
         [Required]
         public float Length { get; set; }
 
         [Required]
-        public string LayoutTitle { get; set; }
-
+        public float Width { get; set; }
+		
         [Required]
-        public string LayoutTheme { get; set; }
-
-        [Required]
-        public TextField Description { get; set; }
+        public float Height { get; set; }
 	}
 }

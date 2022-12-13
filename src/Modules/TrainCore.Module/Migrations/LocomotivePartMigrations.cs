@@ -21,21 +21,14 @@ namespace TrainCore.Module.Migrations
             contentDefinitionManager.AlterPartDefinition(nameof(LocomotivePart), part => part
                 .Attachable()
                 .Reusable()
-                .WithField(nameof(LocomotivePart.Description), field => field
-                    .OfType(nameof(TextField))
-                    .WithDisplayName("LocomotivePart Description")
-                    .WithSettings(new TextFieldSettings
-                    {
-                        Hint = "Describe your locomotive in a couple of sentances here..."
-                    })
-                    .WithEditor("TextArea"))
             );
 
             contentDefinitionManager.AlterTypeDefinition("LocomotivePage", type => type
                 .Creatable()
                 .Listable()
                 .Draftable()
-                .WithPart(nameof(LocomotivePart))
+                .Versionable()
+                .Securable()
             );
 
             return 3;

@@ -30,7 +30,6 @@ namespace TrainCore.Module.Drivers
             part.Width = vM.Width;
             part.Height = vM.Height;
             part.Length = vM.Length;
-            part.LayoutTitle= vM.LayoutTitle;
             part.LayoutTheme = vM.LayoutTheme;
             part.Description = vM.Description;
 
@@ -42,7 +41,6 @@ namespace TrainCore.Module.Drivers
             viewModel.Width = part.Width;
             viewModel.Height = part.Height;
             viewModel.Length = part.Length;
-            viewModel.LayoutTitle = part.LayoutTitle;
             viewModel.LayoutTheme = part.LayoutTheme;
             viewModel.Description = part.Description;
         }
