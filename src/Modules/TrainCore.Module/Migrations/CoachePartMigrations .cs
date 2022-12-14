@@ -3,8 +3,8 @@ using OrchardCore.ContentManagement.Metadata;
 using OrchardCore.ContentManagement.Metadata.Settings;
 using OrchardCore.Data.Migration;
 using OrchardCore.ContentFields.Fields;
-using TrainCore.Module.Indexes;
-using YesSql.Sql;
+using OrchardCore.ContentFields.Settings;
+using OrchardCore.ContentManagement.Metadata.Builders;
 
 namespace TrainCore.Module.Migrations
 {
@@ -20,45 +20,32 @@ namespace TrainCore.Module.Migrations
         public int Create()
         {
             contentDefinitionManager.AlterPartDefinition(nameof(CoachPart), part => part
-                .Attachable()
-                .Reusable()
+                .WithField(nameof(CoachPart.Description), field => field
+                    .OfType(nameof(TextField))
+                    .WithDisplayName("Coach Description")
+                    .WithEditor("TextArea")
+                    .WithSettings(new TextFieldSettings
+                    {
+                        Hint = "Describe the coach/wagon here...",
+                    }))
+                .WithField(nameof(CoachPart.LightDetails), field => field
+                    .OfType(nameof(TextField))
+                    .WithDisplayName("Coach Light Details")
+                    .WithEditor("TextArea")
+                    .WithSettings(new TextFieldSettings
+                    {
+                        Hint = "Describe the lights of the coach/wagon here...",
+                    }))
             );
 
             contentDefinitionManager.AlterTypeDefinition("CoachPage", type => type
                 .Creatable()
                 .Listable()
-                .Draftable()
-                .Versionable()
-                .Securable()
-                .WithPart(nameof(HtmlField))
+                .WithTitlePart()
+                .WithPart(nameof(CoachPart))
             );
 
-            SchemaBuilder.CreateMapIndexTable<BasicTrainIndex>(table => table
-                .Column<string>(nameof(BasicTrainIndex.CompanyName), column => column.WithLength(16))
-                .Column<string>(nameof(BasicTrainIndex.ModelEra), column => column.WithLength(10))
-            );
-
-            SchemaBuilder.AlterIndexTable<BasicTrainIndex>(table => table
-                .CreateIndex($"IDX_{nameof(BasicTrainIndex)}_{nameof(BasicTrainIndex.Id)}",
-                nameof(BasicTrainIndex.CompanyName))
-            );
-
-            return 5;
-        }
-
-        public int UpdateForm2()
-        {
-            SchemaBuilder.CreateMapIndexTable<BasicTrainIndex>(table => table
-                .Column<string>(nameof(BasicTrainIndex.CompanyName), column => column.WithLength(16))
-                .Column<string>(nameof(BasicTrainIndex.ModelEra), column => column.WithLength(10))
-            );
-
-            SchemaBuilder.AlterIndexTable<BasicTrainIndex>(table => table
-                .CreateIndex($"IDX_{nameof(BasicTrainIndex)}_{nameof(BasicTrainIndex.Id)}",
-                nameof(BasicTrainIndex.CompanyName))
-            );
-
-            return 5;
+            return 1;
         }
     }
 }

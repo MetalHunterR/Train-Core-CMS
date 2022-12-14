@@ -1,11 +1,11 @@
 ﻿using TrainCore.Module.Indexes;
-using TrainCore.Module.Models;
 using Microsoft.AspNetCore.Mvc;
 using OrchardCore.ContentManagement;
-using OrchardCore.ContentManagement.Records;
-using System.Linq;
 using System.Threading.Tasks;
 using YesSql;
+using System.Collections.Generic;
+using OrchardCore.ContentManagement.Display;
+using OrchardCore.DisplayManagement.ModelBinding;
 
 namespace TrainCore.Module.Controllers
 {
@@ -13,27 +13,33 @@ namespace TrainCore.Module.Controllers
     {
         private readonly ISession session;
         private readonly IContentManager contentManager;
+        private readonly IContentItemDisplayManager contentItemDisplayManager;
+        private readonly IUpdateModelAccessor updateModelAccessor;
 
-        public BasicTrainController(ISession session, IContentManager contentManager)
+        public BasicTrainController(ISession session, IContentManager contentManager, IContentItemDisplayManager contentItemDisplayManager, IUpdateModelAccessor updateModelAccessor)
         {
             this.session = session;
             this.contentManager = contentManager;
+            this.contentItemDisplayManager = contentItemDisplayManager;
+            this.updateModelAccessor = updateModelAccessor;
         }
 
-        [Route("TrainList/{era}/{company}")]
-        public async Task<string> List(string modelEra, string modelCompany)
+        [Route("TrainList")]
+        public async Task<IActionResult> TrainList(string modelCompany)
         {
             var trainPages = await session
-                .Query<ContentItem, ContentItemIndex>(index => index.ContentType == "LocomotivePage" || index.ContentType == "CoachPage")
-                .With<BasicTrainIndex>(trainIndex => trainIndex.ModelEra == modelEra || trainIndex.CompanyName == modelCompany)
+                .Query<ContentItem, BasicTrainIndex>(index => index.CompanyName == "PIKO")
                 .ListAsync();
 
-            foreach (var trainPage in trainPages)
-            {
-                await contentManager.LoadAsync(trainPage);
-            }
 
-            return string.Join(", ", trainPages.Select(trainPages => trainPages.As<BaseTrain>().Description));
+            var shape = await trainPages.AwaitEachAsync(async train =>
+            {
+                await contentManager.LoadAsync(train);
+
+                return await contentItemDisplayManager.BuildDisplayAsync(train, updateModelAccessor.ModelUpdater);
+            });
+
+            return View(shape);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using OrchardCore.ContentFields.Fields;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using OrchardCore.ContentFields.Fields;
 using System.ComponentModel.DataAnnotations;
 
 namespace TrainCore.Module.ViewModels
@@ -16,6 +17,6 @@ namespace TrainCore.Module.ViewModels
         [Required]
         public abstract TextField Description { get; set; }
 
-        public abstract string LightDetails { get; set; }
+        public abstract TextField LightDetails { get; set; }
     }
 }

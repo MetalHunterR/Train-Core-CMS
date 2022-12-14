@@ -13,6 +13,6 @@ namespace TrainCore.Module.Models
 
         public abstract TextField Description { get; set; }
 
-        public abstract string LightDetails { get; set; }
+        public abstract TextField LightDetails { get; set; }
     }
 }

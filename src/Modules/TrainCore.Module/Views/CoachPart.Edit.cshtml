@@ -18,18 +18,6 @@
 	<span class="hint">@T["The era of the model"] </span>
 </fieldset>
 
-<fieldset class="form-group" asp-validation-class-for="Description.Text">
-	<label asp-for="Description">@T["Description"] <span asp-validation-for="Description.Text"></span></label>
-	<input asp-for="Description.Text" class="form-control" />
-	<span class="hint">@T["The description of the model"] </span>
-</fieldset>
-
-<fieldset class="form-group" asp-validation-class-for="LightDetails">
-	<label asp-for="LightDetails">@T["Light Details"] <span asp-validation-for="LightDetails"></span></label>
-	<input asp-for="LightDetails" class="form-control" />
-	<span class="hint">@T["Usable lights on the model"] </span>
-</fieldset>
-
 <fieldset class="form-group" asp-validation-class-for="HasInteriorBuiltIn">
 	<label asp-for="HasInteriorBuiltIn">@T["Has Interior Built-In"] <span asp-validation-for="HasInteriorBuiltIn"></span></label>
 	<input asp-for="HasInteriorBuiltIn" type="checkbox" class="form-control" />

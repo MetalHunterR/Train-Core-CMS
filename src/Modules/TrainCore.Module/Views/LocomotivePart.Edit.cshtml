@@ -18,18 +18,6 @@
 	<span class="hint">@T["The era of the model"] </span>
 </fieldset>
 
-<fieldset class="form-group" asp-validation-class-for="Description.Text">
-	<label asp-for="Description">@T["Description"] <span asp-validation-for="Description"></span></label>
-	<input asp-for="Description.Text" class="form-control" />
-	<span class="hint">@T["The description of the model"] </span>
-</fieldset>
-
-<fieldset class="form-group" asp-validation-class-for="LightDetails">
-	<label asp-for="LightDetails">@T["Light Details"] <span asp-validation-for="LightDetails"></span></label>
-	<input asp-for="LightDetails" class="form-control" />
-	<span class="hint">@T["Usable lights on the model"] </span>
-</fieldset>
-
 <fieldset class="form-group" asp-validation-class-for="ModelMotorType">
 	<label asp-for="ModelMotorType">@T["Model Motor Type"] <span asp-validation-for="ModelMotorType"></span></label>
 	<input asp-for="ModelMotorType" class="form-control" />
@@ -43,7 +31,7 @@
 </fieldset>
 
 <fieldset class="form-group" asp-validation-class-for="CanUsePantograph">
-	<label asp-for="CanUsePantograph">@T["Light Details"] <span asp-validation-for="CanUsePantograph"></span></label>
+	<label asp-for="CanUsePantograph">@T["Can Use Pantograph"] <span asp-validation-for="CanUsePantograph"></span></label>
 	<input asp-for="CanUsePantograph" type="checkbox" class="form-control" />
 	<span class="hint">@T["Can the model be used with Pantograph"] </span>
 </fieldset>

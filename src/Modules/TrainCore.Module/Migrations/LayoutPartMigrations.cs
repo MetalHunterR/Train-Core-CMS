@@ -4,6 +4,7 @@ using OrchardCore.ContentManagement.Metadata.Settings;
 using OrchardCore.Data.Migration;
 using OrchardCore.ContentFields.Fields;
 using OrchardCore.ContentFields.Settings;
+using OrchardCore.ContentManagement.Metadata.Builders;
 
 namespace TrainCore.Module.Migrations
 {
@@ -19,19 +20,24 @@ namespace TrainCore.Module.Migrations
         public int Create()
         {
             contentDefinitionManager.AlterPartDefinition(nameof(LayoutPart), part => part
-                .Attachable()
-                .Reusable()
+                .WithField(nameof(LayoutPart.Description), field => field
+                    .OfType(nameof(TextField))
+                    .WithDisplayName("Layout Description")
+                    .WithEditor("TextArea")
+                    .WithSettings(new TextFieldSettings
+                    {
+                        Hint = "Describe your layout here...",
+                    }))
             );
 
             contentDefinitionManager.AlterTypeDefinition("LayoutPage", type => type
                 .Creatable()
                 .Listable()
-                .Draftable()
-                .Versionable()
-                .Securable()
+                .WithTitlePart()
+                .WithPart(nameof(LayoutPart))
             );
 
-            return 3;
+            return 1;
         }
     }
 }

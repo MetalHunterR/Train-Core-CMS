@@ -13,7 +13,7 @@ namespace TrainCore.Module.ViewModels
 
         public override TextField Description { get; set; }
 
-        public override string LightDetails { get; set; }
+        public override TextField LightDetails { get; set; }
 
         [Required]
         public bool HasInteriorBuiltIn { get; set; }
