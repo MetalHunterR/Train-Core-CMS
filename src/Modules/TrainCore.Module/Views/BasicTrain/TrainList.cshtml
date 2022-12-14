@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<dynamic>
 @using Microsoft.AspNetCore.Mvc.Localization
 
-<h1>@T["Listed trains here:"]</h1>
+<h1>@T["Listed trains are:"]</h1>
 
 <strong>@T.Plural(Model.Count(), "There's one train.", "There are {0} trains.")</strong>
 <ul>
     @foreach (var shape in Model)
     {
-            <li>
+        <li>
             @await DisplayAsync(shape)
-            </li>
+        </li>
     }
 </ul>

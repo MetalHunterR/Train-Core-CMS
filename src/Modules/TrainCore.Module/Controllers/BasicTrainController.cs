@@ -6,6 +6,8 @@ using YesSql;
 using System.Collections.Generic;
 using OrchardCore.ContentManagement.Display;
 using OrchardCore.DisplayManagement.ModelBinding;
+using System.Linq;
+using TrainCore.Module.Models;
 
 namespace TrainCore.Module.Controllers
 {
@@ -24,15 +26,15 @@ namespace TrainCore.Module.Controllers
             this.updateModelAccessor = updateModelAccessor;
         }
 
-        [Route("TrainList")]
+        [Route("TrainList/{modelCompany}")]
         public async Task<IActionResult> TrainList(string modelCompany)
         {
             var trainPages = await session
                 .QueryContentItem(Lombiq.HelpfulLibraries.OrchardCore.Contents.PublicationStatus.Published, "LocomotivePage")
                 .ListAsync();
 
-
-            var shape = await trainPages.AwaitEachAsync(async train =>
+            var selected = trainPages.Where(train => train.As<LocomotivePart>().CompanyName.ToLower().Equals(modelCompany));
+            var shape = await selected.AwaitEachAsync(async train =>
             {
                 await contentManager.LoadAsync(train);
 
