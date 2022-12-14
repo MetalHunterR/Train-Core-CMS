@@ -3,7 +3,8 @@ using OrchardCore.ContentManagement.Metadata;
 using OrchardCore.ContentManagement.Metadata.Settings;
 using OrchardCore.Data.Migration;
 using OrchardCore.ContentFields.Fields;
-using OrchardCore.ContentFields.Settings;
+using TrainCore.Module.Indexes;
+using YesSql.Sql;
 
 namespace TrainCore.Module.Migrations
 {
@@ -21,14 +22,6 @@ namespace TrainCore.Module.Migrations
             contentDefinitionManager.AlterPartDefinition(nameof(CoachPart), part => part
                 .Attachable()
                 .Reusable()
-                .WithField(nameof(CoachPart.Description), field => field
-                    .OfType(nameof(TextField))
-                    .WithDisplayName("Coach Description")
-                    .WithSettings(new TextFieldSettings
-                    {
-                        Hint = "Describe your coach in a couple of sentances here..."
-                    })
-                    .WithEditor("TextArea"))
             );
 
             contentDefinitionManager.AlterTypeDefinition("CoachPage", type => type
@@ -40,7 +33,32 @@ namespace TrainCore.Module.Migrations
                 .WithPart(nameof(HtmlField))
             );
 
-            return 3;
+            SchemaBuilder.CreateMapIndexTable<BasicTrainIndex>(table => table
+                .Column<string>(nameof(BasicTrainIndex.CompanyName), column => column.WithLength(16))
+                .Column<string>(nameof(BasicTrainIndex.ModelEra), column => column.WithLength(10))
+            );
+
+            SchemaBuilder.AlterIndexTable<BasicTrainIndex>(table => table
+                .CreateIndex($"IDX_{nameof(BasicTrainIndex)}_{nameof(BasicTrainIndex.Id)}",
+                nameof(BasicTrainIndex.CompanyName))
+            );
+
+            return 5;
+        }
+
+        public int UpdateForm2()
+        {
+            SchemaBuilder.CreateMapIndexTable<BasicTrainIndex>(table => table
+                .Column<string>(nameof(BasicTrainIndex.CompanyName), column => column.WithLength(16))
+                .Column<string>(nameof(BasicTrainIndex.ModelEra), column => column.WithLength(10))
+            );
+
+            SchemaBuilder.AlterIndexTable<BasicTrainIndex>(table => table
+                .CreateIndex($"IDX_{nameof(BasicTrainIndex)}_{nameof(BasicTrainIndex.Id)}",
+                nameof(BasicTrainIndex.CompanyName))
+            );
+
+            return 5;
         }
     }
 }

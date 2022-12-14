@@ -1,7 +1,7 @@
 @model TrainCore.Module.ViewModels.LayoutPartViewModel
 
 <div class="layout-part">
-    <div class="layout-theme">@Model.LayoutTheme</div>
-    <div class="layout-desc">@Model.Description</div>
+    <div class="layout-theme">Layout Theme: @Model.LayoutTheme</div>
+    <div class="layout-desc">Layout Description: @Model.Description.Text</div>
     <div class="layout-size">The size of the layout is: @Model.Width (W) x @Model.Length (L) x @Model.Height (H) in cm.</div>
 </div>

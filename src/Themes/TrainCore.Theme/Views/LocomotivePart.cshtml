@@ -1,12 +1,12 @@
 ﻿@model TrainCore.Module.ViewModels.LocomotivePartViewModel
 
 <div class="loco-part">
-    <div class="loco-scale">@Model.ModelScale</div>
-    <div class="loco-company">@Model.CompanyName</div>
-    <div class="loco-era">@Model.ModelEra</div>
-    <div class="loco-desc">@Model.Description</div>
-    <div class="loco-light">@Model.LightDetails</div>
-    <div class="loco-motor">@Model.ModelMotorType</div>
-    <div class="loco-wheel">@Model.ContactWheels</div>
-    <div class="loco-pant">@Model.CanUsePantograph</div>
+    <div class="loco-scale">Scale: @Model.ModelScale</div>
+    <div class="loco-company">Manufacturer: @Model.CompanyName</div>
+    <div class="loco-era">Era: @Model.ModelEra</div>
+    <div class="loco-desc">Description: @Model.Description.Text</div>
+    <div class="loco-light">Light Details: @Model.LightDetails</div>
+    <div class="loco-motor">Used DC Motor: @Model.ModelMotorType</div>
+    <div class="loco-wheel">Pickup wheel no.: @Model.ContactWheels</div>
+    <div class="loco-pant">Pantograph support: @Model.CanUsePantograph</div>
 </div>

@@ -5,12 +5,15 @@ using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 using OrchardCore.ContentManagement;
 using OrchardCore.ContentManagement.Display.ContentDisplay;
+using OrchardCore.ContentManagement.GraphQL.Queries;
 using OrchardCore.Data.Migration;
 using OrchardCore.Modules;
 using TrainCore.Module.Drivers;
 using TrainCore.Module.Handlers;
+using TrainCore.Module.Indexes;
 using TrainCore.Module.Migrations;
 using TrainCore.Module.Models;
+using YesSql.Indexes;
 
 namespace TrainCore.Module
 {
@@ -33,6 +36,8 @@ namespace TrainCore.Module
             services.AddScoped<IDataMigration, LayoutPartMigrations>();
             services.AddScoped<IDataMigration, CoachePartMigrations>();
             services.AddScoped<IDataMigration, LocomotivePartMigrations>();
+
+            services.AddSingleton<IIndexProvider, BasicTrainIndexProvider>();
         }
 
         public override void Configure(IApplicationBuilder builder, IEndpointRouteBuilder routes, IServiceProvider serviceProvider)

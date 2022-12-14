@@ -13,14 +13,14 @@
 </fieldset>
 
 <fieldset class="form-group" asp-validation-class-for="ModelEra">
-	<label asp-for="ModelEra">@T["Width"] <span asp-validation-for="ModelEra"></span></label>
+	<label asp-for="ModelEra">@T["Model Era"] <span asp-validation-for="ModelEra"></span></label>
 	<input asp-for="ModelEra" class="form-control" />
 	<span class="hint">@T["The era of the model"] </span>
 </fieldset>
 
 <fieldset class="form-group" asp-validation-class-for="Description.Text">
 	<label asp-for="Description">@T["Description"] <span asp-validation-for="Description"></span></label>
-	<input asp-for="Description.Text" type="number" class="form-control" />
+	<input asp-for="Description.Text" class="form-control" />
 	<span class="hint">@T["The description of the model"] </span>
 </fieldset>
 
