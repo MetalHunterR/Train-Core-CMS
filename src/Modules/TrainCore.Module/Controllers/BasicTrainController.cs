@@ -28,7 +28,7 @@ namespace TrainCore.Module.Controllers
         public async Task<IActionResult> TrainList(string modelCompany)
         {
             var trainPages = await session
-                .Query<ContentItem, BasicTrainIndex>(index => index.CompanyName == "PIKO")
+                .QueryContentItem(Lombiq.HelpfulLibraries.OrchardCore.Contents.PublicationStatus.Published, "LocomotivePage")
                 .ListAsync();
 
 
